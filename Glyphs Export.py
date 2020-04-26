@@ -28,7 +28,7 @@ def convertFLSToUnicode(Value):
 			try:
 				Uni = unicode(Value, 'cp1252')
 			except:
-				print "Can't covert Value", Value.decode('utf8','ignore')
+				print "Can't convert Value", Value.decode('utf8','ignore')
 				pass
 	return Uni
 	
@@ -580,7 +580,7 @@ def writeFeatures(font, Dict):
 				Feature["code"] = convertFLSToUnicode(FeatureText.value[StartIndex+1:EndIndex].strip())
 				Features.append(Feature)
 			else:
-				print "Problme with Features:", FeatureText.tag, "\n", FeatureText.value
+				print "Problem with Features:", FeatureText.tag, "\n", FeatureText.value
 	if len(Features) > 0:
 		Dict["features"] = Features
 	return Dict
